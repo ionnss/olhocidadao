@@ -1,0 +1,119 @@
+#------------------------------------------------------------
+# Development Configuration (localhost)
+#------------------------------------------------------------
+localhost {
+	# TLS configuration for local development
+	tls internal
+
+	# Handle static files first
+	handle /static/* {
+		uri strip_prefix /static
+		root * /olhocidadao/static
+		file_server
+	}
+
+	# Handle robots.txt and sitemap.xml
+	handle /robots.txt {
+		rewrite * /static/robots.txt
+		root * /olhocidadao
+		file_server
+	}
+
+	handle /sitemap.xml {
+		rewrite * /static/sitemap.xml
+		root * /olhocidadao
+		file_server
+	}
+
+	# Reverse proxy everything else to the app
+	handle /* {
+		reverse_proxy app:8080 {
+			health_uri /
+			health_interval 5s
+			health_timeout 2s
+		}
+	}
+
+	# Log requests to console for debugging
+	log {
+		output stderr
+		format console
+		level DEBUG
+	}
+}
+
+#------------------------------------------------------------
+# Production Configuration (olhocidadao.com)
+#------------------------------------------------------------
+olhocidadao.com {
+	# TLS will be automatically handled by Caddy
+	
+	# Handle static files first
+	handle /static/* {
+		uri strip_prefix /static
+		root * /olhocidadao/static
+		file_server
+	}
+
+	# Handle robots.txt and sitemap.xml
+	handle /robots.txt {
+		rewrite * /static/robots.txt
+		root * /olhocidadao
+		file_server
+	}
+
+	handle /sitemap.xml {
+		rewrite * /static/sitemap.xml
+		root * /olhocidadao
+		file_server
+	}
+
+	# Reverse proxy everything else to the app
+	handle /* {
+		reverse_proxy app:8080
+	}
+
+	# Compression
+	encode gzip
+
+	# Security headers
+	header {
+		X-Frame-Options "SAMEORIGIN"
+		X-Content-Type-Options "nosniff"
+		X-XSS-Protection "1; mode=block"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Content-Security-Policy "
+			default-src 'self';
+			script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com;
+			style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+			img-src 'self' data: https://cdn.jsdelivr.net;
+			font-src 'self' data: https://fonts.gstatic.com;
+			connect-src 'self';
+			frame-ancestors 'self';
+			object-src 'none';
+			base-uri 'self';
+			form-action 'self';
+			upgrade-insecure-requests;
+		"
+	}
+
+	# Logging
+	log {
+		output file /var/log/caddy/access.log {
+			roll_size 50MiB
+			roll_keep 5
+		}
+		format json
+	}
+
+	# Error handling
+	handle_errors {
+		respond "{http.error.status_code} {http.error.status_text}" {http.error.status_code}
+	}
+}
+
+# Redirect www to non-www
+www.olhocidadao.com {
+	redir https://olhocidadao.com{uri} permanent
+}
