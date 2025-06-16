@@ -4,11 +4,10 @@ FROM golang:1.24.4
 # Define work directory
 WORKDIR /olhocidadao
 
-# Copy files and dependencies
+# Copy go.mod first
 COPY go.mod ./
-COPY go.sum ./
-  
-# Download dependencies
+
+# Download dependencies and generate go.sum
 RUN go mod download && go mod tidy
 
 # Download the wait-for-it script

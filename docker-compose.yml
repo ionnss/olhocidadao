@@ -31,7 +31,7 @@ services:
     command: ["/wait-for-it.sh", "db:5432", "-t", "45", "--", "/usr/local/bin/app_olhocidadao"]
 
   db:
-    image: postgres:16.4
+    image: postgres:17.5
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -52,9 +52,9 @@ services:
   caddy:
     image: caddy:2.7-alpine
     ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
+      - "8081:80"
+      - "8443:443"
+      - "8443:443/udp"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
