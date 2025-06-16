@@ -7,6 +7,9 @@ WORKDIR /olhocidadao
 # Copy go.mod first
 COPY go.mod ./
 
+# Copy go.sum
+COPY go.sum ./
+
 # Download dependencies and generate go.sum
 RUN go mod download && go mod tidy
 
