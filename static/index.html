@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
     
     <!-- SEO Meta Tags -->
-    <title>NymShare - Secure & Ephemeral File Sharing Platform</title>
-    <meta name="description" content="End-to-end encrypted platform for secure document sharing. Perfect for legal professionals, NGOs, activists, and media organizations. Secure, ephemeral, and private.">
-    <meta name="keywords" content="secure file sharing, encrypted file transfer, ephemeral sharing, end-to-end encryption, secure document transfer, private file sharing, NGO security, legal document sharing">
+    <title>Olho Cidadão - Plataforma de Denúncias de Infraestrutura Pública</title>
+    <meta name="description" content="Plataforma para cidadãos reportarem e acompanharem problemas na infraestrutura pública. Ajude a melhorar sua cidade reportando buracos, iluminação, segurança e outros problemas.">
+    <meta name="keywords" content="denúncia pública, infraestrutura urbana, problemas na cidade, buracos na rua, iluminação pública, segurança pública, cidadania ativa">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nymshare.com/">
-    <meta property="og:title" content="NymShare - Secure & Ephemeral File Sharing">
-    <meta property="og:description" content="End-to-end encrypted platform for secure document sharing. Perfect for legal professionals, NGOs, activists, and media organizations.">
-    <meta property="og:image" content="https://nymshare.com/static/assets/og-image.png">
+    <meta property="og:url" content="https://olhocidadao.com/">
+    <meta property="og:title" content="Olho Cidadão - Denúncias de Infraestrutura Pública">
+    <meta property="og:description" content="Plataforma para cidadãos reportarem e acompanharem problemas na infraestrutura pública. Ajude a melhorar sua cidade!">
+    <meta property="og:image" content="https://olhocidadao.com/static/assets/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nymshare.com/">
-    <meta property="twitter:title" content="NymShare - Secure & Ephemeral File Sharing">
-    <meta property="twitter:description" content="End-to-end encrypted platform for secure document sharing. Perfect for legal professionals, NGOs, activists, and media organizations.">
-    <meta property="twitter:image" content="https://nymshare.com/static/assets/og-image.png">
+    <meta property="twitter:url" content="https://olhocidadao.com/">
+    <meta property="twitter:title" content="Olho Cidadão - Denúncias de Infraestrutura Pública">
+    <meta property="twitter:description" content="Plataforma para cidadãos reportarem e acompanharem problemas na infraestrutura pública. Ajude a melhorar sua cidade!">
+    <meta property="twitter:image" content="https://olhocidadao.com/static/assets/og-image.png">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://nymshare.com/">
+    <link rel="canonical" href="https://olhocidadao.com/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">
@@ -36,22 +36,22 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "NymShare",
-        "applicationCategory": "SecurityApplication",
+        "@type": "WebApplication",
+        "name": "Olho Cidadão",
+        "applicationCategory": "CivicEngagement",
         "operatingSystem": "Web",
-        "description": "End-to-end encrypted platform for secure document sharing. Perfect for legal professionals, NGOs, activists, and media organizations.",
+        "description": "Plataforma para monitoramento cidadão e transparência pública. Acompanhe e participe do controle social das políticas públicas.",
         "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "USD"
+            "priceCurrency": "BRL"
         },
         "featureList": [
-            "End-to-end encryption",
-            "24-hour auto-deletion",
-            "No account needed",
-            "Secure email integration",
-            "Secure file sharing"
+            "Monitoramento de políticas públicas",
+            "Transparência governamental",
+            "Participação cidadã",
+            "Controle social",
+            "Dados abertos"
         ]
     }
     </script>
@@ -272,37 +272,35 @@
             background-blend-mode: overlay, overlay, difference, difference, difference, normal;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
             z-index: 1;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* Add hover effect */
+        .hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add responsive adjustments */
         @media (max-width: 768px) {
             .hero {
-                padding: 4rem 0;
-            }
-
-            .hero .display-4 {
-                font-size: 2rem;
-                margin-bottom: 1rem !important;
-            }
-
-            .hero .lead {
-                font-size: 1rem;
-                margin-bottom: 2rem !important;
-            }
-
-            .hero .d-flex {
-                flex-direction: column;
-                gap: 1rem !important;
-            }
-
-            .hero .btn-lg {
-                width: 100%;
-                justify-content: center;
-                padding: 0.8rem 1rem;
-            }
-
-            .btn-with-icon img {
-                width: 28px;
-                height: 28px;
+                margin: 1rem !important;
+                padding: 4rem 0 0 0 !important;
+                min-height: 400px;
             }
         }
 
@@ -311,10 +309,6 @@
             .hero {
                 background-image: linear-gradient(115deg, rgb(33, 150, 243), rgb(25, 25, 25));
             }
-        }
-
-        .hero::before {
-            display: none;
         }
 
         .btn-primary {
@@ -570,248 +564,282 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.1.1/dist/htmx.min.js"></script>
     <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+</head>
+<body>
     <main>
-    <head>
-    <body>
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar navbar-expand-lg" role="navigation">
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <a class="navbar-brand d-flex align-items-center" href="/">
-                    <img src="/static/assets/logo.svg" alt="NymShare Logo" height="90" class="me-2">
-                    <span class="fw-bold">NymShare</span>
-                </a>
-                <div class="d-flex gap-3">
-                    <button class="btn btn-link p-0"
-                        hx-get="/share"
-                        hx-target="#content">
-                        <img src="/static/assets/button.svg" alt="Share" height="45" style="filter: brightness(0);">
-                    </button>
-                    <button class="btn btn-link p-0"
-                        hx-get="/channel"
-                        hx-target="#content">
-                        <img src="/static/assets/safe-button.svg" alt="Create Channel" height="30" style="filter: brightness(0);">
-                    </button>
+        <!-- Navigation -->
+        <header>
+            <nav class="navbar navbar-expand-lg" role="navigation">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <a class="navbar-brand d-flex align-items-center" href="/">
+                        <i class="bi bi-eye-fill fs-1 me-2 text-primary"></i>
+                        <span class="fw-bold">Olho Cidadão</span>
+                    </a>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-link p-0"
+                            hx-get="/report"
+                            hx-target="#content">
+                            <i class="bi bi-camera-fill fs-3" style="color: #000;"></i>
+                        </button>
+                        <button class="btn btn-link p-0"
+                            hx-get="/track"
+                            hx-target="#content">
+                            <i class="bi bi-clipboard-check fs-3" style="color: #000;"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <div class="content" id="content">
-    
-        <!-- Hero Section -->
-        <section class="hero" id="home" aria-label="Introduction">
-            <div class="container text-center" id="hero-content">
-                <h1 class="display-4 mb-4" id="hero-title" data-i18n="hero.title">Secure & Ephemeral File Sharing</h1>
-                <p class="lead mb-5" data-i18n="hero.subtitle">End-to-end encrypted platform for secure document sharing. Perfect for legal professionals, NGOs, activists, and media organizations. Ideal for sensitive communications and confidential disclosures.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <button class="btn btn-primary btn-lg btn-with-icon"
-                        hx-get="/channel"
-                        hx-target="#content">
-                        <span data-i18n="hero.create_channel">Create Secure Channel</span>
-                        <img src="/static/assets/safe-button.svg" alt="Arrow">
-                    </button>
-                    <button class="btn btn-outline-light btn-lg btn-with-icon"
-                        hx-get="/share"
-                        hx-target="#content">
-                        <span data-i18n="hero.share_confidentially">Share Confidentially</span>
-                        <img src="/static/assets/button.svg" height="45" alt="Arrow">
-                    </button>
-                </div>
-                <p class="text-white-50 mt-5" id="hero-tagline" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;" data-i18n="hero.tagline">Encrypted truths, ephemeral secrets. Define the Accountables.</p>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="bg-transparent py-5" id="features" aria-label="Features">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="mb-3" data-i18n="features.title">How It Works</h2>
-                    <p class="lead text-muted" data-i18n="features.subtitle">Simple, secure, and ephemeral document sharing</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card h-100 p-4">
-                            <div class="card-body text-center">
-                                <i class="bi bi-key fs-1 mb-3"></i>
-                                <h3 class="card-title" data-i18n="features.recipients.title">For Recipients</h3>
-                                <p class="card-text" data-i18n="features.recipients.description">Register with your email to receive notifications of encrypted documents sent to you. Share your public key via QR code or URL.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 p-4">
-                            <div class="card-body text-center">
-                                <i class="bi bi-shield-lock fs-1 mb-3"></i>
-                                <h3 class="card-title" data-i18n="features.senders.title">For Senders</h3>
-                                <p class="card-text" data-i18n="features.senders.description">Scan recipient's QR code, upload files, and they're automatically encrypted. No account needed.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 p-4">
-                            <div class="card-body text-center">
-                                <i class="bi bi-clock-history fs-1 mb-3"></i>
-                                <h3 class="card-title" data-i18n="features.autodelete.title">24h Auto-Delete</h3>
-                                <p class="card-text" data-i18n="features.autodelete.description">Files are automatically deleted after 24 hours. Your privacy is our priority.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Use Cases Section -->
-        <section class="py-5" id="use-cases" aria-label="Use Cases">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="mb-3" data-i18n="use_cases.title">Who Uses NymShare</h2>
-                    <p class="lead text-muted" data-i18n="use_cases.subtitle">Secure document sharing for those who handle sensitive information</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-3">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <i class="bi bi-newspaper fs-1 mb-3 text-primary"></i>
-                                <h4 data-i18n="use_cases.media.title">Media & Press</h4>
-                                <p class="text-muted" data-i18n="use_cases.media.description">Secure channel for receiving sensitive information from confidential sources</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <i class="bi bi-briefcase fs-1 mb-3 text-primary"></i>
-                                <h4 data-i18n="use_cases.legal.title">Legal Professionals</h4>
-                                <p class="text-muted" data-i18n="use_cases.legal.description">Protected communication for sensitive case materials and confidential reports</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <i class="bi bi-people fs-1 mb-3 text-primary"></i>
-                                <h4 data-i18n="use_cases.ngo.title">NGOs & Activists</h4>
-                                <p class="text-muted" data-i18n="use_cases.ngo.description">Secure platform for documenting and sharing sensitive findings</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <i class="bi bi-building fs-1 mb-3 text-primary"></i>
-                                <h4 data-i18n="use_cases.corporate.title">Corporate Ethics</h4>
-                                <p class="text-muted" data-i18n="use_cases.corporate.description">Confidential channel for internal reporting and compliance</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Security Features Section -->
-        <section class="py-5" id="security" aria-label="Security Features">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <h2 class="mb-4" data-i18n="security.title">Built for Maximum Security</h2>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                <span data-i18n="security.features.encryption">End-to-end encryption using public/private key pairs</span>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                <span data-i18n="security.features.private_keys">Private keys never leave your device</span>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                <span data-i18n="security.features.email_integration">Secure email integration</span>
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                <span data-i18n="security.features.no_accounts">No accounts, no logins, no metadata stored</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                <span data-i18n="security.features.auto_delete">Automatic 24-hour file deletion</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card bg-dark text-white p-4">
-                            <pre class="mb-0"><code>
-<span data-i18n="security.code_block.recipient">Recipient</span>:
-1. 🔑 <span data-i18n="security.code_block.steps.generate_key">Generate private key</span>
-2. 🔒 <span data-i18n="security.code_block.steps.share_key">Share public key (QR/URL)</span>
-
-<span data-i18n="security.code_block.sender">Sender</span>:
-1. 📱 <span data-i18n="security.code_block.steps.scan_qr">Scan QR code</span>
-2. 📄 <span data-i18n="security.code_block.steps.upload_file">Upload & encrypt file</span>
-3. ⏳ <span data-i18n="security.code_block.steps.auto_delete">24h auto-deletion</span>
-                            </code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="content" id="content">
         
-        <!-- Footer -->
-        <footer class="py-5 mt-5" role="contentinfo">
-            <div class="container">
-                <div class="row mb-4">
-                    <div class="col-lg-3 mb-4 d-flex flex-column align-items-center">
-                        <a href="#" class="mb-3 d-flex flex-column align-items-center text-decoration-none">
-                            <img src="/static/assets/logo.svg" alt="NymShare Logo" height="120">
-                            <span class="mt-3 fw-bold text-dark" style="font-size: 1.25rem;">NymShare</span>
-                        </a>
-                        <div class="social-icons mt-4 mb-4">
-                            <a href="#" class="text-dark me-4 fs-5"><i class="bi bi-twitter-x"></i></a>
-                            <a href="#" class="text-dark fs-5"><i class="bi bi-linkedin"></i></a>
+            <!-- Hero Section -->
+            <section class="hero" id="home" aria-label="Introduction">
+                <div class="container text-center" id="hero-content">
+                    <h1 class="display-4 mb-4" id="hero-title" data-i18n="hero.title">Ajude a Melhorar Nossa Cidade</h1>
+                    <p class="lead mb-5" data-i18n="hero.subtitle">Reporte problemas na infraestrutura pública como buracos nas ruas, iluminação pública, segurança e outros. Acompanhe o status das suas denúncias e ajude a construir uma cidade melhor.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn btn-primary btn-lg btn-with-icon"
+                            hx-get="/report"
+                            hx-target="#content">
+                            <span data-i18n="hero.report_issue">Reportar Problema</span>
+                            <i class="bi bi-camera-fill fs-4"></i>
+                        </button>
+                        <button class="btn btn-outline-light btn-lg btn-with-icon"
+                            hx-get="/track"
+                            hx-target="#content">
+                            <span data-i18n="hero.track_reports">Acompanhar Denúncias</span>
+                            <i class="bi bi-clipboard-check fs-4"></i>
+                        </button>
+                    </div>
+                    <p class="text-white-50 mt-5" id="hero-tagline" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;" data-i18n="hero.tagline">Cidadania ativa, cidade melhor. Seja o olho da sua comunidade.</p>
+                </div>
+            </section>
+
+            <!-- Sobre Section -->
+            <section id="sobre" class="py-5">
+                <div class="container">
+                    <h2 class="text-center mb-5">Sobre o Olho Cidadão</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="card-title">Transparência</h3>
+                                    <p class="card-text">Acesso fácil e rápido a informações sobre gastos públicos, contratos e políticas governamentais.</p>
+                                </div>
+                            </div>
                         </div>
-                        
-                    </div>
-                    <div class="col-6 col-lg-2 mb-4">
-                        <h6 class="fw-bold mb-3" data-i18n="footer.company.title">Company</h6>
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.company.about">About us</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.company.security">Security</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.company.status">Status</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.company.terms">Terms & privacy</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-lg-2 mb-4">
-                        <h6 class="fw-bold mb-3" data-i18n="footer.resources.title">Resources</h6>
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.resources.help">Help center</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.resources.blog">Blog</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.resources.community">Community</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-lg-3 mb-4">
-                        <h6 class="fw-bold mb-3" data-i18n="footer.products.title">NymShare for</h6>
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.products.enterprise">Enterprise</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.products.small_business">Small business</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2" data-i18n="footer.products.personal">Personal use</a></li>
-                        </ul>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="card-title">Participação</h3>
+                                    <p class="card-text">Engaje-se ativamente no monitoramento e controle social das políticas públicas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="card-title">Dados Abertos</h3>
+                                    <p class="card-text">Informações públicas organizadas e acessíveis para todos os cidadãos.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="mt-4 pt-4 border-top d-flex justify-content-between align-items-center">
-                    <p class="text-muted small mb-0" data-i18n="footer.copyright">© 2025 NymShare Labs, Inc.</p>
-                    <div class="top-lang-selector" onclick="toggleLang()" id="langToggle">
-                        <div class="toggle-option" id="enOption">
-                            <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" alt="English" width="20">
+            </section>
+
+            <!-- Features Section -->
+            <section class="bg-transparent py-5" id="features" aria-label="Features">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3" data-i18n="features.title">Como Funciona</h2>
+                        <p class="lead text-muted" data-i18n="features.subtitle">Reporte, acompanhe e ajude a resolver problemas na sua cidade</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 p-4">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-camera-fill fs-1 mb-3 text-primary"></i>
+                                    <h3 class="card-title" data-i18n="features.report.title">Reporte</h3>
+                                    <p class="card-text" data-i18n="features.report.description">Tire fotos e descreva o problema encontrado na infraestrutura pública. Localize no mapa e envie sua denúncia.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="toggle-option" id="ptOption">
-                            <img src="https://hatscripts.github.io/circle-flags/flags/br.svg" alt="Português" width="20">
+                        <div class="col-md-4">
+                            <div class="card h-100 p-4">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-clock-history fs-1 mb-3 text-primary"></i>
+                                    <h3 class="card-title" data-i18n="features.track.title">Acompanhe</h3>
+                                    <p class="card-text" data-i18n="features.track.description">Receba atualizações sobre o status da sua denúncia e acompanhe o progresso da resolução.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="toggle-slider" id="toggleSlider"></div>
+                        <div class="col-md-4">
+                            <div class="card h-100 p-4">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-people-fill fs-1 mb-3 text-primary"></i>
+                                    <h3 class="card-title" data-i18n="features.community.title">Comunidade</h3>
+                                    <p class="card-text" data-i18n="features.community.description">Veja outras denúncias na sua região e ajude a priorizar os problemas mais urgentes.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </section>
+
+            <!-- Use Cases Section -->
+            <section class="py-5" id="use-cases" aria-label="Use Cases">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3" data-i18n="use_cases.title">O Que Você Pode Reportar</h2>
+                        <p class="lead text-muted" data-i18n="use_cases.subtitle">Problemas comuns na infraestrutura pública que precisam de atenção</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-signpost-split-fill fs-1 mb-3 text-primary"></i>
+                                    <h4 data-i18n="use_cases.roads.title">Vias Públicas</h4>
+                                    <p class="text-muted" data-i18n="use_cases.roads.description">Buracos, asfalto danificado, sinalização precária</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-lightning-fill fs-1 mb-3 text-primary"></i>
+                                    <h4 data-i18n="use_cases.lighting.title">Iluminação</h4>
+                                    <p class="text-muted" data-i18n="use_cases.lighting.description">Lâmpadas queimadas, postes danificados</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-shield-fill fs-1 mb-3 text-primary"></i>
+                                    <h4 data-i18n="use_cases.safety.title">Segurança</h4>
+                                    <p class="text-muted" data-i18n="use_cases.safety.description">Áreas perigosas, vandalismo, pontos de risco</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-tree-fill fs-1 mb-3 text-primary"></i>
+                                    <h4 data-i18n="use_cases.environment.title">Meio Ambiente</h4>
+                                    <p class="text-muted" data-i18n="use_cases.environment.description">Lixo acumulado, árvores em risco, áreas degradadas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Features Section -->
+            <section class="py-5" id="security" aria-label="Security Features">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="mb-4" data-i18n="security.title">Como Funciona</h2>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span data-i18n="security.features.encryption">Reporte problemas com fotos e localização</span>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span data-i18n="security.features.private_keys">Acompanhe o status da sua denúncia</span>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span data-i18n="security.features.email_integration">Receba notificações por email</span>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span data-i18n="security.features.no_accounts">Veja outras denúncias na sua região</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span data-i18n="security.features.auto_delete">Ajude a priorizar os problemas mais urgentes</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-dark text-white p-4">
+                                <pre class="mb-0"><code>
+<span data-i18n="security.code_block.recipient">Cidadão</span>:
+1. 📱 <span data-i18n="security.code_block.steps.generate_key">Tire fotos do problema</span>
+2. 📍 <span data-i18n="security.code_block.steps.share_key">Localize no mapa</span>
+
+<span data-i18n="security.code_block.sender">Sistema</span>:
+1. ✅ <span data-i18n="security.code_block.steps.scan_qr">Registra a denúncia</span>
+2. 📧 <span data-i18n="security.code_block.steps.upload_file">Notifica responsáveis</span>
+3. 🔄 <span data-i18n="security.code_block.steps.auto_delete">Acompanha resolução</span>
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="py-5 mt-5" role="contentinfo">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-lg-3 mb-4 d-flex flex-column align-items-center">
+                            <a href="#" class="mb-3 d-flex flex-column align-items-center text-decoration-none">
+                                <i class="bi bi-eye-fill fs-1 text-primary"></i>
+                                <span class="mt-3 fw-bold text-dark" style="font-size: 1.25rem;">Olho Cidadão</span>
+                            </a>
+                            <div class="social-icons mt-4 mb-4">
+                                <a href="#" class="text-dark me-4 fs-5"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="text-dark fs-5"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-2 mb-4">
+                            <h6 class="fw-bold mb-3">Institucional</h6>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Sobre nós</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Transparência</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Status</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Termos e privacidade</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-2 mb-4">
+                            <h6 class="fw-bold mb-3">Recursos</h6>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Central de ajuda</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Blog</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Comunidade</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-3 mb-4">
+                            <h6 class="fw-bold mb-3">Olho Cidadão para</h6>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Cidadãos</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Bairros</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark p-0 mb-2">Prefeituras</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-top d-flex justify-content-between align-items-center">
+                        <p class="text-muted small mb-0">© 2024 Olho Cidadão. Todos os direitos reservados.</p>
+                        <div class="top-lang-selector" onclick="toggleLang()" id="langToggle">
+                            <div class="toggle-option" id="enOption">
+                                <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" alt="English" width="20">
+                            </div>
+                            <div class="toggle-option" id="ptOption">
+                                <img src="https://hatscripts.github.io/circle-flags/flags/br.svg" alt="Português" width="20">
+                            </div>
+                            <div class="toggle-slider" id="toggleSlider"></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </main>
+
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
