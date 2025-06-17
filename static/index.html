@@ -329,6 +329,56 @@
             position: relative;
             overflow: hidden;
             color: white;
+            min-height: 44px; /* Minimum touch target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            white-space: normal;
+            text-align: center;
+        }
+
+        /* Mobile-optimized button styles */
+        @media (max-width: 768px) {
+            .btn-primary {
+                padding: 0.8rem 1.5rem;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-group .btn {
+                margin: 0.25rem 0;
+                border-radius: 8px !important;
+            }
+
+            .btn-with-icon {
+                width: 100%;
+                justify-content: center;
+                gap: 0.75rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .btn-with-icon img {
+                width: 24px;
+                height: 24px;
+            }
+
+            /* Stack hero buttons vertically on mobile */
+            .hero-btn-group {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 0.75rem !important;
+            }
+            .hero-btn-group .btn {
+                width: 100%;
+                margin: 0;
+            }
         }
 
         .btn-primary::before {
@@ -569,6 +619,12 @@
             font-size: 0.875rem;
         }
         
+        .btn-outline-light:active, .btn-outline-light.active, .btn-outline-light:focus {
+            background: #fff !important;
+            color: #0d47a1 !important;
+            border: 2px solid #0d47a1 !important;
+            box-shadow: 0 0 0 0.2rem rgba(33,150,243,0.2) !important;
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -608,7 +664,7 @@
                 <div class="container text-center" id="hero-content">
                     <h1 class="display-4 mb-4" id="hero-title" data-i18n="hero.title">Ajude a Melhorar Nossa Cidade</h1>
                     <p class="lead mb-5" data-i18n="hero.subtitle">Reporte problemas na infraestrutura pública como buracos nas ruas, iluminação pública, segurança e outros. Acompanhe o status das suas denúncias e ajude a construir uma cidade melhor.</p>
-                    <div class="d-flex justify-content-center gap-3">
+                    <div class="d-flex justify-content-center gap-3 hero-btn-group">
                         <button class="btn btn-primary btn-lg btn-with-icon"
                             hx-get="/report"
                             hx-target="#content">
@@ -634,24 +690,32 @@
                         <div class="col-md-4">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h3 class="card-title">Transparência</h3>
-                                    <p class="card-text">Acesso fácil e rápido a informações sobre gastos públicos, contratos e políticas governamentais.</p>
+                                    <h3 class="card-title">Proteção de Dados</h3>
+                                    <p class="card-text">Mantenha seus dados pessoais seguros com criptografia robusta e o mínimo de coleta. Sua privacidade é nossa prioridade.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h3 class="card-title">Participação</h3>
-                                    <p class="card-text">Engaje-se ativamente no monitoramento e controle social das políticas públicas.</p>
+                                    <h3 class="card-title">Comunidade Ativa</h3>
+                                    <p class="card-text">Participe ativamente. Solicite e acompanhe a resolução de problemas que impactam seu dia a dia e sua comunidade.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h3 class="card-title">Dados Abertos</h3>
-                                    <p class="card-text">Informações públicas organizadas e acessíveis para todos os cidadãos.</p>
+                                    <h3 class="card-title">Transparência Total</h3>
+                                    <p class="card-text">Não há necessidade de criar contas. Todas as denúncias são anônimas e vinculadas ao seu CPF (criptografado), garantindo total transparência sem exposição.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="card-title">Voz Ativa</h3>
+                                    <p class="card-text">Sua opinião importa. Vote em outros relatórios no feed global para destacar problemas urgentes e amplificar as vozes da comunidade.</p>
                                 </div>
                             </div>
                         </div>

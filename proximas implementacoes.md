@@ -1,15 +1,15 @@
 # Próximas Implementalções
 
 ## Ajustes
-- Arrumar os botões dos heros para telas de smartphone 
+- [X] Arrumar os botões dos heros para telas de smartphone 
 - Arrumar os textos e secções para melhor adaptação a telas de smartphone
 - Alterar o gradiente do fundo do hero principal (usar verde e azul)
 - Alterar os nomes dos componentes das páginas se seccções como ids e classes do html para estar claro o que cada parte é (refatorar)
 
 ## Sobre
-- Proteção de dados pessoas e mínimo de dados pessoais (criptografia dos dados pessoais)
-- Participe da comunidade e solicite problemas que afetam o seu dia a dia
-- Transparência (não é precisso criar conta, pois tudo estará viinculado ao seu cpf)
+- [X] Proteção de dados pessoas e mínimo de dados pessoais (criptografia dos dados pessoais)
+- [X] Participe da comunidade e solicite problemas que afetam o seu dia a dia
+- [X] Transparência (não é precisso criar conta, pois tudo estará viinculado ao seu cpf e seu cpf nunca será publico, portanto criptografado)
 
 ## Funções
 - Handler Criptografia de CPF
