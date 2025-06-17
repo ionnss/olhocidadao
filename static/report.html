@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags - Adjust as needed for specific page -->
+    <title>Olho Cidadão - Reportar Problema</title>
+    <meta name="description" content="Reporte problemas na infraestrutura pública. Ajude a melhorar sua cidade!">
+    <meta name="keywords" content="denúncia, infraestrutura, problema, reportar, cidade">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #2196f3;
+            --secondary-blue: #64b5f6;
+            --dark-shield: #1a1a1a;
+            --gradient-dark: linear-gradient(145deg, var(--dark-shield), #2a2a2a);
+            --font-primary: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #fafafa;
+            font-family: var(--font-primary);
+            
+        }
+
+        main {
+            position: relative;
+            min-height: 100vh;
+            background-color: #fafafa;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.3'/%3E%3C/svg%3E"),
+                radial-gradient(circle at top right, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at bottom left, rgba(255,255,255,0.1) 0%, transparent 50%),
+                linear-gradient(180deg, 
+                    rgba(255,255,255,0.12) 0%, 
+                    rgba(255,255,255,0.06) 30%, 
+                    rgba(255,255,255,0.02) 60%, 
+                    rgba(255,255,255,0.08) 100%);
+            background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+            background-size: 30px 30px, 100% 100%, 100% 100%, 100% 100%;
+        
+        }
+
+        main > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+
+        .lead {
+            font-family: var(--font-primary);
+            font-weight: 400;
+        }
+
+        .btn {
+            font-family: var(--font-primary);
+            font-weight: 500;
+        }
+
+        .nav-link {
+            font-family: var(--font-primary);
+            font-weight: 500;
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-weight: 400;
+        }
+
+        .form-select {
+            font-family: var(--font-primary);
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 9999;
+            padding: 2rem;
+            border-top: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            border: none;
+            padding: 0.8rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            white-space: normal;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .btn-primary {
+                padding: 0.8rem 1.5rem;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn-group .btn {
+                margin: 0.25rem 0;
+                border-radius: 8px !important;
+            }
+            .btn-with-icon {
+                width: 100%;
+                justify-content: center;
+                gap: 0.75rem;
+                padding: 0.8rem 1.5rem;
+            }
+            .btn-with-icon img {
+                width: 24px;
+                height: 24px;
+            }
+            .hero-btn-group {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 0.75rem !important;
+            }
+            .hero-btn-group .btn {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-100%);
+            transition: transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+            background: #0ae4ce;
+            color: #025c4e;
+            transition: color 0.3s ease;
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(0);
+        }
+
+        .card {
+            border: none;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(33, 149, 243, 0.147));
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        /* Remove hover effects for cards in the report form */
+        .card:hover {
+            transform: none; /* Disable the translateY effect */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Revert to initial shadow */
+        }
+
+        .card:hover::before {
+            transform: translateX(-100%); /* Disable the ::before animation */
+        }
+
+        .card i {
+            color: var(--primary-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover i {
+            transform: none; /* Disable the icon scale effect */
+        }
+
+        .bg-light-gray {
+            background-color: #fafafa;
+        }
+
+        footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            margin: 0 2rem;
+            border-radius: 20px 20px 0 0;
+            background: rgba(255, 255, 255, 0) !important;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.21);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .social-icons a {
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        .form-select {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu Styles */
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .navbar-toggler-icon {
+            background-image: none;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 2px;
+            background-color: var(--dark-shield);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler-icon::before {
+            top: 8px;
+        }
+
+        .navbar-toggler-icon::after {
+            bottom: 8px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+            transform: rotate(45deg);
+            top: 11px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+            transform: rotate(-45deg);
+            bottom: 11px;
+        }
+
+        /* Button with Icon Styles */
+        .btn-with-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding-right: 2rem;
+        }
+
+        .btn-with-icon img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .btn-outline-light {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Improved active/toggled contrast for buttons */
+        .btn-primary:active, .btn-primary.active, .btn-primary:focus {
+            background: #0d47a1 !important; /* much darker blue */
+            color: #fff !important;
+            box-shadow: 0 0 0 0.2rem rgba(33,150,243,0.3) !important;
+            border: none !important;
+        }
+        .btn-outline-light:active, .btn-outline-light.active, .btn-outline-light:focus {
+            background: #fff !important;
+            color: #0d47a1 !important;
+            border: 2px solid #0d47a1 !important;
+            box-shadow: 0 0 0 0.2rem rgba(33,150,243,0.2) !important;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-transparent">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center" href="/" hx-get="/" hx-target="#content">
+                        <i class="bi bi-eye-fill me-2 fs-3 text-primary"></i>
+                        <span class="fw-bold">Olho Cidadão</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" hx-get="/" hx-target="#content" data-i18n="nav.home">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobre" hx-get="#sobre" hx-target="#content" data-i18n="nav.about">Sobre</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#use-cases" hx-get="#use-cases" hx-target="#content" data-i18n="nav.report_types">O Que Reportar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#security" hx-get="#security" hx-target="#content" data-i18n="nav.how_it_works">Como Funciona</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#features" hx-get="#features" hx-target="#content" data-i18n="nav.features">Recursos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-i18n="nav.contact">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content" id="content">
+            <!-- Report form content starts here -->
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-center mb-4">Reportar um Problema</h2>
+                        <p class="lead text-center mb-5 text-muted">Preencha os campos abaixo para nos ajudar a identificar e resolver o problema na infraestrutura pública.</p>
+
+                        <form hx-post="/submit-report" hx-target="#content" hx-indicator="#loadingIndicator" class="needs-validation" novalidate>
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">Informações Pessoais (Opcional e Criptografado)</h5>
+                                    <div class="mb-3">
+                                        <label for="cpf" class="form-label">CPF (Apenas números)</label>
+                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex: 12345678900" pattern="\d{11}" title="Informe apenas os 11 dígitos do CPF.">
+                                        <div class="form-text">Seu CPF será criptografado e não será público. Usado apenas para vincular a denúncia de forma segura.</div>
+                                        <div class="invalid-feedback">
+                                            Por favor, insira um CPF válido com 11 dígitos.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">Localização do Problema</h5>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="useGps" onchange="toggleLocationFields()">
+                                        <label class="form-check-label" for="useGps">
+                                            Usar Localização GPS Atual
+                                        </label>
+                                    </div>
+
+                                    <div id="addressFields">
+                                        <div class="mb-3">
+                                            <label for="state" class="form-label">Estado (UF)</label>
+                                            <select class="form-select" id="state" name="state" required>
+                                                <option value="">Selecione o Estado</option>
+                                                <!-- Options will be dynamically loaded or hardcoded -->
+                                                <option value="AC">Acre</option>
+                                                <option value="AL">Alagoas</option>
+                                                <option value="AP">Amapá</option>
+                                                <option value="AM">Amazonas</option>
+                                                <option value="BA">Bahia</option>
+                                                <option value="CE">Ceará</option>
+                                                <option value="DF">Distrito Federal</option>
+                                                <option value="ES">Espírito Santo</option>
+                                                <option value="GO">Goiás</option>
+                                                <option value="MA">Maranhão</option>
+                                                <option value="MT">Mato Grosso</option>
+                                                <option value="MS">Mato Grosso do Sul</option>
+                                                <option value="MG">Minas Gerais</option>
+                                                <option value="PA">Pará</option>
+                                                <option value="PB">Paraíba</option>
+                                                <option value="PR">Paraná</option>
+                                                <option value="PE">Pernambuco</option>
+                                                <option value="PI">Piauí</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="RN">Rio Grande do Norte</option>
+                                                <option value="RS">Rio Grande do Sul</option>
+                                                <option value="RO">Rondônia</option>
+                                                <option value="RR">Roraima</option>
+                                                <option value="SC">Santa Catarina</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="SE">Sergipe</option>
+                                                <option value="TO">Tocantins</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Por favor, selecione o Estado.
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="city" class="form-label">Cidade</label>
+                                            <input type="text" class="form-control" id="city" name="city" placeholder="Ex: São Paulo" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, informe a Cidade.
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="neighborhood" class="form-label">Bairro</label>
+                                            <input type="text" class="form-control" id="neighborhood" name="neighborhood" placeholder="Ex: Centro" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, informe o Bairro.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="gpsFields" style="display: none;">
+                                        <div class="mb-3">
+                                            <label for="latitude" class="form-label">Latitude</label>
+                                            <input type="text" class="form-control" id="latitude" name="latitude" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="longitude" class="form-label">Longitude</label>
+                                            <input type="text" class="form-control" id="longitude" name="longitude" readonly>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" onclick="getGpsLocation()">Obter Localização GPS</button>
+                                        <div class="form-text">Os campos de Latitude e Longitude serão preenchidos automaticamente após clicar no botão.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">Detalhes do Problema</h5>
+                                    <div class="mb-3">
+                                        <label for="problemDescription" class="form-label">Descrição (Obrigatório)</label>
+                                        <textarea class="form-control" id="problemDescription" name="description" rows="5" placeholder="Descreva o problema em detalhes: tipo de problema, endereço aproximado, referências, etc." required></textarea>
+                                        <div class="invalid-feedback">
+                                            Por favor, descreva o problema.
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="photo" class="form-label">Foto do Problema (Opcional)</label>
+                                        <input class="form-control" type="file" id="photo" name="photo" accept="image/*">
+                                        <div class="form-text">Envie uma foto clara do problema ou tire uma nova.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success btn-lg">Enviar Denúncia</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Report form content ends here -->
+        </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.js" integrity="sha384-oeUn82QNXPuVkGCkcrInrS1twIxKhkZiFfr2TdiuObZ3n3yIeMiqcRzkIcguaof1" crossorigin="anonymous"></script>
+    <script>
+    // Function to toggle between address fields and GPS fields
+    function toggleLocationFields() {
+        const useGps = document.getElementById('useGps').checked;
+        const addressFields = document.getElementById('addressFields');
+        const gpsFields = document.getElementById('gpsFields');
+
+        if (useGps) {
+            addressFields.style.display = 'none';
+            gpsFields.style.display = 'block';
+            addressFields.querySelectorAll('[required]').forEach(input => input.removeAttribute('required'));
+            document.getElementById('latitude').setAttribute('required', 'true');
+            document.getElementById('longitude').setAttribute('required', 'true');
+        } else {
+            addressFields.style.display = 'block';
+            gpsFields.style.display = 'none';
+            addressFields.querySelectorAll('input').forEach(input => {
+                if (input.id !== 'cpf') {
+                    input.setAttribute('required', 'true');
+                }
+            });
+            document.getElementById('state').setAttribute('required', 'true');
+            document.getElementById('latitude').removeAttribute('required');
+            document.getElementById('longitude').removeAttribute('required');
+        }
+    }
+
+    function getGpsLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    document.getElementById('latitude').value = position.coords.latitude;
+                    document.getElementById('longitude').value = position.coords.longitude;
+                },
+                (error) => {
+                    alert('Não foi possível obter a localização GPS: ' + error.message);
+                    console.error('Error getting GPS location:', error);
+                }
+            );
+        } else {
+            alert('Geolocalização não é suportada por este navegador.');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleLocationFields();
+        
+        document.getElementById('cpf').addEventListener('input', function() {
+            if (this.value && !this.checkValidity()) {
+                this.classList.add('is-invalid');
+            } else {
+                this.classList.remove('is-invalid');
+            }
+        });
+
+        const form = document.querySelector('.needs-validation');
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
+    </script>
+</body>
+</html> 
